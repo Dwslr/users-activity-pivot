@@ -60,10 +60,10 @@ select
 from t1
     )
 select                                               -- выборка из объединенной таблицы t2, содержащей все искомые метрики
-    to_char(ym, 'yyyy-mm') as month,                 -- месяц
+    to_char(ym, 'yyyy-mm') as "month",                 -- месяц
     metrics,                                         -- название метрики
     count(id)                                        -- подсчет количества значений метрики
 from t2
-group by month, metrics                              -- группировка по месяцу и метрике для реализации сводной таблицы
-order by month, metrics
+group by "month", metrics                              -- группировка по месяцу и метрике для реализации сводной таблицы
+order by "month", metrics
 	
